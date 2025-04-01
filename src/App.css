@@ -1,458 +1,593 @@
-/* Main Layout Styles */
-.layout-section {
-  width: 100%;
-}
-
-/* Header Styles */
-.header-section {
-  background-color: var(--accent-light);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: var(--shadow-sm);
-  padding: 1rem 0;
-}
-
-.header-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-}
-
-.logo-box {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.logo-img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  background-color: var(--primary);
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-}
-
-.logo-name {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(1.125rem, 1rem + 1vw, 1.5rem);
-  font-weight: 700;
-  color: var(--primary);
-  letter-spacing: 1px;
-  margin: 0;
-}
-
-/* Navigation Styles */
-.nav-wrap {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(92, 61, 46, 0.95);
-  z-index: 1000;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease-in-out;
-}
-
-.nav-wrap.active {
-  transform: translateX(0);
-}
-
-.nav-box {
-  display: flex;
-  flex-direction: column;
-  padding: 5rem 2rem;
-}
-
-.nav-item {
-  margin-bottom: 1.5rem;
-}
-
-.nav-item-interactive-box {
-  cursor: pointer;
-  transition: var(--transition);
-  position: relative;
-  display: inline-block;
-}
-
-.nav-item-interactive-box h3 {
-  color: var(--text-light);
-  font-size: 1.5rem;
-  font-weight: 500;
-  transition: var(--transition);
-}
-
-.nav-item-interactive-box::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: var(--accent);
-  transition: width 0.3s ease;
-}
-
-.nav-item-interactive-box:hover::after {
-  width: 100%;
-}
-
-.nav-item-interactive-box:hover h3 {
-  color: var(--accent);
-}
-
-.nav-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1001;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-}
-
-.nav-button-close-box {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-}
-
-.nav-button-open-box,
-.nav-button-close-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Main Section Styles */
-.main-section {
-  flex: 1;
-  padding: 2rem 0;
-}
-
-/* Hero Section */
-.hero-content-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.call-to-action {
-  order: 1;
-}
-
-.call-to-action h2 {
-  font-size: clamp(2rem, 1.5rem + 2vw, 3.5rem);
-  color: var(--primary);
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.call-to-action h2 i {
-  font-style: italic;
-  color: var(--secondary);
-  position: relative;
-  display: inline-block;
-}
-
-.call-to-action h2 i::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 6px;
-  bottom: -6px;
-  left: 0;
-  background-color: var(--accent);
-}
-
-.call-to-action p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  color: var(--text-dark);
-}
-
-.cta-button {
-  display: inline-block;
-  padding: 0.75rem 1.75rem;
-  background: linear-gradient(to right, var(--primary), var(--secondary));
-  color: var(--text-light);
-  border: none;
-  border-radius: 30px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition);
-}
-
-.cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
-  color: var(--text-light);
-}
-
-.cta-button-container {
-  text-align: center;
-}
-
-.cta-content-wrap {
-  width: 100%;
-}
-
-/* Product Gallery */
-.hero-product-gallery-wrap {
-  order: 2;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
-  width: 100%;
-}
-
-.hero-product-item {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition);
-  height: 320px;
-}
-
-.hero-product-item:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-}
-
-.hero-product-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.hero-product-item:hover img {
-  transform: scale(1.05);
-}
-
-.product-text-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1.25rem;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-  color: var(--text-light);
-  transition: var(--transition);
-}
-
-.product-text-content h2 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-  color: var(--text-light);
-}
-
-.product-text-content p {
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-  opacity: 0.9;
-}
-
-.product-price {
-  font-weight: 700;
-  color: var(--accent);
-  font-size: 1.2rem;
-}
-
-/* Footer Styles */
-.footer-section {
-  background-color: var(--primary-dark);
-  color: var(--text-light);
-  padding: 3rem 0 2rem;
-}
-
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.footer-text {
-  text-align: center;
-}
-
-.footer-text h2 {
-  font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem);
-  color: var(--accent);
-  margin-bottom: 1rem;
-}
-
-.footer-text a {
-  color: var(--text-light);
-  transition: var(--transition);
-}
-
-.footer-text a:hover {
-  color: var(--accent);
-}
-
-.footer-contact {
-  margin-top: 1.5rem;
-}
-
-.footer-contact p {
-  margin: 0.5rem 0;
-  font-size: 0.95rem;
-  opacity: 0.9;
-}
-
-.social-box {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.social-logo-box {
-  cursor: pointer;
-  border: 2px solid var(--accent);
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition);
-}
-
-.social-logo {
-  width: 20px;
-  height: 20px;
-  transition: var(--transition);
-  filter: brightness(0) invert(1);
-}
-
-.social-logo-box:hover {
-  background-color: var(--accent);
-  transform: translateY(-3px);
-  border-color: var(--accent);
-}
-
-.social-logo-box:hover .social-logo {
-  filter: brightness(0);
-}
-
-/* Container */
-.container {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-/* Design bar (if needed) */
-.design-bar {
-  display: none;
-}
-
-/* Responsive Styles */
-@media (min-width: 768px) {
-  .hero-content-wrap {
-    flex-direction: row;
+/* ======================================
+   GENERAL LAYOUT STYLES
+   ====================================== */
+   .layout-section {
+    width: 100%;
+  }
+  
+  /* Container - Used across all components */
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* ======================================
+     HEADER.JSX STYLES
+     ====================================== */
+  
+  /* Header.jsx -- Main header container */
+  .header-section {
+    background-color: var(--accent-light);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+    padding: 1rem 0;
+  }
+  
+  /* Header.jsx -- Content wrapper */
+  .header-content {
+    display: flex;
     align-items: center;
-  }
-
-  .call-to-action {
-    order: 2;
-    flex: 1;
-    padding-left: 2rem;
-  }
-
-  .hero-product-gallery-wrap {
-    order: 1;
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .footer-content {
-    flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    position: relative;
   }
-
-  .footer-text {
-    text-align: left;
-    flex: 2;
+  
+  /* Header.jsx -- Logo container */
+  .logo-box {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
   }
-
-  .social-box {
-    justify-content: flex-end;
-    flex: 1;
+  
+  /* Header.jsx -- Logo image circle */
+  .logo-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
   }
-
-  .cta-button-container {
-    text-align: left;
+  
+  /* Header.jsx -- Logo text */
+  .logo-name {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(1.125rem, 1rem + 1vw, 1.5rem);
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 1px;
+    margin: 0;
   }
-}
-
-@media (min-width: 992px) {
+  
+  /* Header.jsx -- Navigation wrapper */
   .nav-wrap {
-    position: static;
-    height: auto;
-    background-color: transparent;
-    transform: none;
-    width: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(92, 61, 46, 0.95);
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
   }
-
+  
+  /* Header.jsx -- Active navigation state */
+  .nav-wrap.active {
+    transform: translateX(0);
+  }
+  
+  /* Header.jsx -- Navigation items container */
   .nav-box {
     display: flex;
-    flex-direction: row;
-    padding: 0;
-    gap: 1.5rem;
+    flex-direction: column;
+    padding: 5rem 2rem;
   }
-
+  
+  /* Header.jsx -- Individual navigation item */
   .nav-item {
-    margin-bottom: 0;
+    margin-bottom: 1.5rem;
   }
-
+  
+  /* Header.jsx -- Interactive navigation item */
+  .nav-item-interactive-box {
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Header.jsx -- Navigation item text */
   .nav-item-interactive-box h3 {
-    color: var(--primary);
-    font-size: 1rem;
-    font-weight: 600;
+    color: var(--text-light);
+    font-size: 1.5rem;
+    font-weight: 500;
+    transition: var(--transition);
   }
-
+  
+  /* Header.jsx -- Navigation item underline effect */
   .nav-item-interactive-box::after {
-    background-color: var(--primary);
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
   }
-
+  
+  /* Header.jsx -- Navigation item hover effect */
+  .nav-item-interactive-box:hover::after {
+    width: 100%;
+  }
+  
   .nav-item-interactive-box:hover h3 {
-    color: var(--secondary);
+    color: var(--accent);
   }
-
-  .nav-button {
+  
+  /* Header.jsx -- Order button styling */
+  .order-button {
+    background-color: var(--secondary);
+    border-radius: var(--radius-md);
+    padding: 0.5rem 1.25rem;
+    transition: all 0.3s ease;
+  }
+  
+  .order-button::after {
     display: none;
   }
-
-  .hero-product-gallery-wrap {
-    grid-template-columns: repeat(2, 1fr);
+  
+  .order-button h3 {
+    color: var(--text-light) !important;
+    font-weight: 600;
   }
-}
-
-@media (min-width: 1200px) {
-  .hero-product-gallery-wrap {
-    grid-template-columns: repeat(2, 1fr);
+  
+  .order-button:hover {
+    background-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
   }
-
+  
+  /* Header.jsx -- Mobile navigation toggle button */
+  .nav-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Header.jsx -- Close button in mobile navigation */
+  .nav-button-close-box {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+  
+  /* Header.jsx -- Navigation button alignment */
+  .nav-button-open-box,
+  .nav-button-close-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* ======================================
+     MAIN.JSX STYLES
+     ====================================== */
+  
+  /* Main.jsx -- Main content section */
+  .main-section {
+    flex: 1;
+    padding: 2rem 0;
+  }
+  
+  /* Main.jsx -- Hero content wrapper */
+  .hero-content-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  /* Main.jsx -- Call to action section */
+  .call-to-action {
+    order: 1;
+  }
+  
+  /* Main.jsx -- CTA heading */
   .call-to-action h2 {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 1.5rem + 2vw, 3.5rem);
+    color: var(--primary);
+    margin-bottom: 1rem;
+    line-height: 1.2;
   }
-}
-
+  
+  /* Main.jsx -- CTA heading emphasis */
+  .call-to-action h2 i {
+    font-style: italic;
+    color: var(--secondary);
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Main.jsx -- CTA heading emphasis underline */
+  .call-to-action h2 i::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    bottom: -6px;
+    left: 0;
+    background-color: var(--accent);
+  }
+  
+  /* Main.jsx -- CTA paragraph */
+  .call-to-action p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+  }
+  
+  /* Main.jsx -- CTA button */
+  .cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    color: var(--text-light);
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+  }
+  
+  /* Main.jsx -- CTA button hover effect */
+  .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    color: var(--text-light);
+  }
+  
+  /* Main.jsx -- CTA button container */
+  .cta-button-container {
+    text-align: center;
+  }
+  
+  /* Main.jsx -- CTA content wrapper */
+  .cta-content-wrap {
+    width: 100%;
+  }
+  
+  /* Main.jsx -- Product gallery grid */
+  .hero-product-gallery-wrap {
+    order: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+  }
+  
+  /* Main.jsx -- Individual product item */
+  .hero-product-item {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    height: 320px;
+  }
+  
+  /* Main.jsx -- Product item hover effect */
+  .hero-product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  /* Main.jsx -- Product image */
+  .hero-product-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  /* Main.jsx -- Product image hover effect */
+  .hero-product-item:hover img {
+    transform: scale(1.05);
+  }
+  
+  /* Main.jsx -- Product text overlay */
+  .product-text-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.25rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    color: var(--text-light);
+    transition: var(--transition);
+  }
+  
+  /* Main.jsx -- Product title */
+  .product-text-content h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+  }
+  
+  /* Main.jsx -- Product description */
+  .product-text-content p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+  }
+  
+  /* Main.jsx -- Product price */
+  .product-price {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 1.2rem;
+  }
+  
+  /* ======================================
+     FOOTER.JSX STYLES
+     ====================================== */
+  
+  /* Footer.jsx -- Main footer container */
+  .footer-section {
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    padding: 3rem 0 2rem;
+  }
+  
+  /* Footer.jsx -- Footer content wrapper */
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  /* Footer.jsx -- Footer text section */
+  .footer-text {
+    text-align: center;
+  }
+  
+  /* Footer.jsx -- Footer heading */
+  .footer-text h2 {
+    font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  
+  /* Footer.jsx -- Footer links */
+  .footer-text a {
+    color: var(--text-light);
+    transition: var(--transition);
+  }
+  
+  /* Footer.jsx -- Footer link hover */
+  .footer-text a:hover {
+    color: var(--accent);
+  }
+  
+  /* Footer.jsx -- Contact information */
+  .footer-contact {
+    margin-top: 1.5rem;
+  }
+  
+  /* Footer.jsx -- Contact text */
+  .footer-contact p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+  }
+  
+  /* Footer.jsx -- Social icons container */
+  .social-box {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  /* Footer.jsx -- Individual social icon */
+  .social-logo-box {
+    cursor: pointer;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+  }
+  
+  /* Footer.jsx -- Social icon image */
+  .social-logo {
+    width: 20px;
+    height: 20px;
+    transition: var(--transition);
+    filter: brightness(0) invert(1);
+  }
+  
+  /* Footer.jsx -- Social icon hover effect */
+  .social-logo-box:hover {
+    background-color: var(--accent);
+    transform: translateY(-3px);
+    border-color: var(--accent);
+  }
+  
+  /* Footer.jsx -- Social icon image hover effect */
+  .social-logo-box:hover .social-logo {
+    filter: brightness(0);
+  }
+  
+  /* ======================================
+     UTILITY STYLES
+     ====================================== */
+  
+  /* Design bar (if needed) */
+  .design-bar {
+    display: none;
+  }
+  
+  /* ======================================
+     RESPONSIVE STYLES
+     ====================================== */
+  
+  /* Tablet and larger */
+  @media (min-width: 768px) {
+    /* Main.jsx -- Hero layout for tablet+ */
+    .hero-content-wrap {
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    /* Main.jsx -- CTA order for tablet+ */
+    .call-to-action {
+      order: 2;
+      flex: 1;
+      padding-left: 2rem;
+    }
+  
+    /* Main.jsx -- Product gallery for tablet+ */
+    .hero-product-gallery-wrap {
+      order: 1;
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    /* Footer.jsx -- Footer layout for tablet+ */
+    .footer-content {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  
+    /* Footer.jsx -- Footer text alignment for tablet+ */
+    .footer-text {
+      text-align: left;
+      flex: 2;
+    }
+  
+    /* Footer.jsx -- Social icons alignment for tablet+ */
+    .social-box {
+      justify-content: flex-end;
+      flex: 1;
+    }
+  
+    /* Main.jsx -- CTA button alignment for tablet+ */
+    .cta-button-container {
+      text-align: left;
+    }
+  }
+  
+  /* Desktop styles */
+  @media (min-width: 992px) {
+    /* Header.jsx -- Navigation for desktop */
+    .nav-wrap {
+      position: static;
+      height: auto;
+      background-color: transparent;
+      transform: none;
+      width: auto;
+    }
+  
+    /* Header.jsx -- Navigation items for desktop */
+    .nav-box {
+      display: flex;
+      flex-direction: row;
+      padding: 0;
+      gap: 2rem;
+      align-items:end;
+    }
+  
+    /* Header.jsx -- Navigation item spacing for desktop */
+    .nav-item {
+      margin-bottom: 0;
+    }
+  
+    /* Header.jsx -- Navigation text for desktop */
+    .nav-item-interactive-box h3 {
+      color: var(--primary);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  
+    /* Header.jsx -- Navigation underline for desktop */
+    .nav-item-interactive-box::after {
+      background-color: var(--primary);
+    }
+  
+    /* Header.jsx -- Navigation hover for desktop */
+    .nav-item-interactive-box:hover h3 {
+      color: var(--secondary);
+    }
+  
+    /* Header.jsx -- Order button for desktop */
+    .order-button {
+      background-color: var(--secondary);
+      padding: 0.5rem 1.5rem;
+      border-radius: var(--radius-md);
+      transition: all 0.3s ease;
+    }
+  
+    /* Header.jsx -- Order button text for desktop */
+    .order-button h3 {
+      color: var(--text-light) !important;
+      margin: 0;
+    }
+  
+    /* Header.jsx -- Order button hover for desktop */
+    .order-button:hover {
+      background-color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+  
+    /* Header.jsx -- Order button text hover for desktop */
+    .order-button:hover h3 {
+      color: var(--text-light) !important;
+    }
+  
+    /* Header.jsx -- Hide mobile navigation button on desktop */
+    .nav-button {
+      display: none;
+    }
+  
+    /* Main.jsx -- Product gallery for desktop */
+    .hero-product-gallery-wrap {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Large desktop styles */
+  @media (min-width: 1200px) {
+    /* Main.jsx -- Product gallery for large desktop */
+    .hero-product-gallery-wrap {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    /* Main.jsx -- CTA heading for large desktop */
+    .call-to-action h2 {
+      font-size: 3.5rem;
+    }
+  }
+  
+  

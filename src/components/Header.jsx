@@ -29,13 +29,10 @@ export default function Header() {
               <h3>MENU</h3>
             </div>
             <div className="nav-item nav-item-interactive-box">
-              <h3>DELIVERY</h3>
-            </div>
-            <div className="nav-item nav-item-interactive-box">
               <h3>ABOUT</h3>
             </div>
-            <div className="nav-item nav-item-interactive-box">
-              <h3>CONTACT</h3>
+            <div className="nav-item nav-item-interactive-box order-button">
+              <h3>ORDER</h3>
             </div>
           </div>
           <button className="nav-button nav-button-close-box" onClick={toggleNav} aria-label="Close navigation">
