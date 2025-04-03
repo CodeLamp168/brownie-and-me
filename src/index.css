@@ -1,21 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap");
 
 :root {
-  /* Color Theme - Rich Chocolate & Cream */
-  --primary: #5c3d2e; /* Rich chocolate brown */
-  --primary-dark: #402a20; /* Darker brown */
-  --primary-light: #7d5a50; /* Lighter brown */
-  --secondary: #b85c38; /* Warm terracotta accent */
-  --accent: #e0c097; /* Creamy beige */
-  --accent-light: #f5f0e6; /* Light cream */
-  --text-dark: #2c2420; /* Dark text */
-  --text-light: #ffffff; /* Light text */
+  /* Color Theme - Rich Chocolate & Cream - Enhanced */
+  --primary: #5c3d2e; /* Rich chocolate brown - base */
+  --primary-dark: #3a2318; /* Darker brown - deeper for better contrast */
+  --primary-light: #8d6e5d; /* Lighter brown - softer for backgrounds */
+  --primary-subtle: #f0e6e0; /* Very light brown - for subtle backgrounds */
+  --secondary: #b85c38; /* Warm terracotta accent - base */
+  --secondary-dark: #9a4b2c; /* Darker terracotta - for hover states */
+  --secondary-light: #d47e5a; /* Lighter terracotta - for highlights */
+  --accent: #e0c097; /* Creamy beige - base */
+  --accent-dark: #c9a87c; /* Darker beige - for borders and details */
+  --accent-light: #f5f0e6; /* Light cream - for backgrounds */
+  --accent-subtle: #faf8f3; /* Very light cream - for subtle backgrounds */
+  --text-dark: #2c2420; /* Dark text - for body copy */
+  --text-darker: #1a1614; /* Darker text - for headings */
+  --text-medium: #5a4a42; /* Medium text - for secondary content */
+  --text-light: #ffffff; /* Light text - for dark backgrounds */
+  --text-light-muted: rgba(255, 255, 255, 0.85); /* Muted light text */
   --background: #faf6f0; /* Soft cream background */
+  --success: #5c8d60; /* Green for success messages */
+  --error: #b85c5c; /* Red for error messages */
 
   /* Shadows and Effects */
-  --shadow-sm: 0 2px 4px rgba(92, 61, 46, 0.1);
-  --shadow-md: 0 4px 8px rgba(92, 61, 46, 0.15);
-  --shadow-lg: 0 8px 16px rgba(92, 61, 46, 0.2);
+  --shadow-sm: 0 2px 4px rgba(92, 61, 46, 0.08);
+  --shadow-md: 0 4px 8px rgba(92, 61, 46, 0.12);
+  --shadow-lg: 0 8px 16px rgba(92, 61, 46, 0.16);
+  --shadow-inner: inset 0 2px 4px rgba(92, 61, 46, 0.05);
   --transition: all 0.3s ease;
 
   /* Border Radius */

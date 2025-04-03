@@ -8,7 +8,11 @@ export default function Footer() {
         <div className="footer-text">
           <h2>Indulge in delightful treats</h2>
           <a href="mailto:contact@brownieandme.com">contact@brownieandme.com</a>
-       
+          <div className="footer-contact">
+            <p>123 Bakery Street, Sweet Town</p>
+            <p>Open: Mon-Sat 8am-6pm</p>
+            <p>Tel: (555) 123-4567</p>
+          </div>
         </div>
 
         <div className="social-box">
